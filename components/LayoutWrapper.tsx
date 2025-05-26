@@ -8,7 +8,7 @@ import React from 'react'
 
 export const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
     const pathname = usePathname()
-    const isDashboardOrLogin = pathname.startsWith('/dashboard') || pathname === '/admin'
+    const isDashboardOrLogin = pathname.startsWith('/admin')
 
     return (
         <CartProvider>
