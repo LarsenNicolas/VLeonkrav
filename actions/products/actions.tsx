@@ -4,6 +4,7 @@ import {z} from 'zod';
 import {revalidatePath} from 'next/cache';
 import {prisma} from "@/prisma/prisma"
 import {redirect} from "next/navigation";
+import {Product} from "@prisma/client";
 
 type GetProductsParams = {
     search?: string;
@@ -42,7 +43,7 @@ export async function getProductById(id: string) {
         });
     } catch (error) {
         console.error("Error al obtener el producto:", error);
-        return null;
+        return {};
     }
 }
 
