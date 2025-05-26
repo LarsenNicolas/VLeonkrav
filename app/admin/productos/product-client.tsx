@@ -133,7 +133,7 @@ export default function ProductClient({ initialProducts: products }: { initialPr
                                                 alt={product.name}
                                                 width={40}
                                                 height={40}
-                                                className="rounded-lg"
+                                                className="rounded-lg h-[50px]"
                                             />
                                             <div>
                                                 <p className="font-medium">{product.name}</p>
