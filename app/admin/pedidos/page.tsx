@@ -149,7 +149,7 @@ export default function OrdersPage() {
             <CardTitle className="text-sm font-medium">Ingresos</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">€{totalRevenue.toFixed(2)}</div>
+            <div className="text-2xl font-bold">${totalRevenue.toFixed(2)}</div>
           </CardContent>
         </Card>
       </div>
@@ -204,7 +204,7 @@ export default function OrdersPage() {
                     </div>
                   </TableCell>
                   <TableCell>{order.items} productos</TableCell>
-                  <TableCell>€{order.total.toFixed(2)}</TableCell>
+                  <TableCell>${order.total.toFixed(2)}</TableCell>
                   <TableCell>{getStatusBadge(order.status)}</TableCell>
                   <TableCell>{order.createdAt}</TableCell>
                   <TableCell className="text-right">

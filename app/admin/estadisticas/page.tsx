@@ -50,7 +50,7 @@ export default function StatsPage() {
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">€{monthlyStats.revenue.toLocaleString()}</div>
+            <div className="text-2xl font-bold">${monthlyStats.revenue.toLocaleString()}</div>
             <div className="flex items-center space-x-1 text-xs">
               <TrendingUp className="h-3 w-3 text-green-600" />
               <span className="text-green-600">+{monthlyStats.revenueChange}%</span>
@@ -120,7 +120,7 @@ export default function StatsPage() {
                     <p className="text-sm text-gray-600">{data.orders} pedidos</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-bold">€{data.revenue.toLocaleString()}</p>
+                    <p className="font-bold">${data.revenue.toLocaleString()}</p>
                     <div className="w-32 bg-gray-200 rounded-full h-2 mt-1">
                       <div
                         className="bg-gold-600 h-2 rounded-full"
@@ -178,7 +178,7 @@ export default function StatsPage() {
                   </div>
                 </div>
                 <p className="text-sm text-gray-600">{customer.orders} pedidos</p>
-                <p className="font-bold">€{customer.total.toLocaleString()}</p>
+                <p className="font-bold">${customer.total.toLocaleString()}</p>
               </div>
             ))}
           </div>

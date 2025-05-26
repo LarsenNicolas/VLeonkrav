@@ -282,7 +282,7 @@ export default function ProductsPage() {
               {/* Price Range */}
               <div>
                 <Label className="text-sm font-medium mb-3 block">
-                  Precio: €{priceRange[0]} - €{priceRange[1]}
+                  Precio: ${priceRange[0]} - ${priceRange[1]}
                 </Label>
                 <Slider
                   value={priceRange}

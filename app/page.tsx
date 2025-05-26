@@ -114,7 +114,7 @@ export default function HomePage() {
                 <Truck className="w-8 h-8 text-gold-500" />
               </div>
               <h3 className="font-semibold mb-2 text-lg">Envío Premium</h3>
-              <p className="text-gray-600">Entrega gratuita en pedidos superiores a €150</p>
+              <p className="text-gray-600">Entrega gratuita en pedidos superiores a $10.000</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">

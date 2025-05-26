@@ -75,7 +75,7 @@ export default function AdminDashboard() {
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">€{stats.revenue.toLocaleString()}</div>
+            <div className="text-2xl font-bold">${stats.revenue.toLocaleString()}</div>
             <p className="text-xs text-muted-foreground">+22% desde el mes pasado</p>
           </CardContent>
         </Card>
@@ -96,7 +96,7 @@ export default function AdminDashboard() {
                     <p className="text-sm text-gray-600">{order.customer}</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium">€{order.total}</p>
+                    <p className="font-medium">${order.total}</p>
                     <Badge
                       variant={order.status === "COMPLETED" ? "default" : "secondary"}
                       className={order.status === "COMPLETED" ? "bg-green-100 text-green-800" : ""}
@@ -129,7 +129,7 @@ export default function AdminDashboard() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium">€{product.revenue.toLocaleString()}</p>
+                    <p className="font-medium">${product.revenue.toLocaleString()}</p>
                   </div>
                 </div>
               ))}

@@ -352,7 +352,7 @@ export default function CheckoutPage() {
                           <p className="text-sm text-slate-600">Cantidad: {item.quantity}</p>
                         </div>
                         <div className="text-right">
-                          <p className="font-medium">€{(item.price * item.quantity).toFixed(2)}</p>
+                          <p className="font-medium">${(item.price * item.quantity).toFixed(2)}</p>
                         </div>
                       </div>
                     ))}
@@ -392,7 +392,7 @@ export default function CheckoutPage() {
                     <span className="text-slate-600">
                       {item.name} × {item.quantity}
                     </span>
-                    <span className="font-medium">€{(item.price * item.quantity).toFixed(2)}</span>
+                    <span className="font-medium">${(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                 ))}
               </div>
@@ -400,18 +400,18 @@ export default function CheckoutPage() {
               <div className="border-t pt-4 space-y-2">
                 <div className="flex justify-between">
                   <span className="text-slate-600">Subtotal</span>
-                  <span className="font-medium">€{state.total.toFixed(2)}</span>
+                  <span className="font-medium">${state.total.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-600">Envío</span>
-                  <span className="font-medium">{shipping === 0 ? "Gratis" : `€${shipping.toFixed(2)}`}</span>
+                  <span className="font-medium">{shipping === 0 ? "Gratis" : `$${shipping.toFixed(2)}`}</span>
                 </div>
               </div>
 
               <div className="border-t pt-4">
                 <div className="flex justify-between text-lg font-bold">
                   <span>Total</span>
-                  <span>€{finalTotal.toFixed(2)}</span>
+                  <span>${finalTotal.toFixed(2)}</span>
                 </div>
               </div>
 

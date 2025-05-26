@@ -79,7 +79,7 @@ export default function CartPage() {
                           <p className="text-sm text-slate-600 mb-2">
                             {item.brand} • {item.finish}
                           </p>
-                          <p className="font-bold text-slate-800">€{item.price.toFixed(2)}</p>
+                          <p className="font-bold text-slate-800">${item.price.toFixed(2)}</p>
                         </div>
 
                         {/* Quantity Controls */}
@@ -135,7 +135,7 @@ export default function CartPage() {
                     <span className="text-slate-600">
                       {item.name} × {item.quantity}
                     </span>
-                    <span className="font-medium">€{(item.price * item.quantity).toFixed(2)}</span>
+                    <span className="font-medium">${(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                 ))}
               </div>
@@ -143,19 +143,19 @@ export default function CartPage() {
               <div className="border-t pt-4 space-y-2">
                 <div className="flex justify-between">
                   <span className="text-slate-600">Subtotal</span>
-                  <span className="font-medium">€{state.total.toFixed(2)}</span>
+                  <span className="font-medium">${state.total.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-600">Envío</span>
-                  <span className="font-medium">{shipping === 0 ? "Gratis" : `€${shipping.toFixed(2)}`}</span>
+                  <span className="font-medium">{shipping === 0 ? "Gratis" : `${shipping.toFixed(2)}`}</span>
                 </div>
-                {shipping > 0 && <p className="text-xs text-slate-500">Envío gratis en pedidos superiores a €99</p>}
+                {shipping > 0 && <p className="text-xs text-slate-500">Envío gratis en pedidos superiores a $10.000</p>}
               </div>
 
               <div className="border-t pt-4">
                 <div className="flex justify-between text-lg font-bold">
                   <span>Total</span>
-                  <span>€{finalTotal.toFixed(2)}</span>
+                  <span>${finalTotal.toFixed(2)}</span>
                 </div>
               </div>
 

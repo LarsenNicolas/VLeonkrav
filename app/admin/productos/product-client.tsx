@@ -142,7 +142,7 @@ export default function ProductClient({ initialProducts: products }: { initialPr
                                         </div>
                                     </TableCell>
                                     <TableCell>{product.category}</TableCell>
-                                    <TableCell>€{product.price.toFixed(2)}</TableCell>
+                                    <TableCell>${product.price.toFixed(2)}</TableCell>
                                     <TableCell>{product.stock}</TableCell>
                                     <TableCell>{getStockBadge(product.stock, "")}</TableCell>
                                     <TableCell className="text-right">
