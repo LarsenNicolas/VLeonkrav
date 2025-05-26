@@ -8,18 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ShoppingCart } from "lucide-react"
 import { useCart } from "./cart-provider"
-
-interface Product {
-  id: string
-  name: string
-  price: number
-  originalPrice?: number
-  image: string
-  category: string
-  finish: string
-  brand: string
-  featured?: boolean
-}
+import {Product} from "@prisma/client";
 
 interface ProductCardProps {
   product: Product
@@ -38,15 +27,15 @@ export function ProductCard({ product }: ProductCardProps) {
       <Link href={`/productos/${product.id}`}>
         <div className="aspect-square relative overflow-hidden bg-slate-50">
           <Image
-            src={product.image || "/placeholder.svg"}
+            src={product.imagesUrl[0] || "/placeholder.svg"}
             alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
-          {product.featured && (
+          {/*product.featured && (
             <Badge className="absolute top-2 left-2 bg-amber-500 hover:bg-amber-600">Destacado</Badge>
-          )}
-          {product.originalPrice && (
+          )*/}
+          {product.price && (
             <Badge variant="destructive" className="absolute top-2 right-2">
               Oferta
             </Badge>
@@ -62,15 +51,11 @@ export function ProductCard({ product }: ProductCardProps) {
 
           <h3 className="font-semibold text-slate-800 mb-1 line-clamp-2">{product.name}</h3>
 
-          <p className="text-sm text-slate-600 mb-2">
-            {product.brand} • {product.finish}
-          </p>
-
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <span className="text-lg font-bold text-slate-800">${product.price.toFixed(2)}</span>
-              {product.originalPrice && (
-                <span className="text-sm text-slate-500 line-through">${product.originalPrice.toFixed(2)}</span>
+              {product.price && (
+                <span className="text-sm text-slate-500 line-through">${(product.price - product.discount).toFixed(2)}</span>
               )}
             </div>
           </div>

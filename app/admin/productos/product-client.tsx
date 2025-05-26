@@ -26,7 +26,7 @@ export default function ProductClient({ initialProducts: products }: { initialPr
         if (status === "out_of_stock" || stock === 0) {
             return <Badge variant="destructive">Sin Stock</Badge>
         }
-        if (status === "low_stock" || stock < 10) {
+        if (status === "low_stock" || stock <= 5) {
             return (
                 <Badge variant="secondary" className="bg-yellow-100 text-yellow-800">
                     Stock Bajo
@@ -71,7 +71,7 @@ export default function ProductClient({ initialProducts: products }: { initialPr
                     </CardHeader>
                     <CardContent>
                         <div
-                            className="text-2xl font-bold text-green-600">{products?.filter((p: Product) => p.stock > 10).length}</div>
+                            className="text-2xl font-bold text-green-600">{products?.filter((p: Product) => p.stock > 5).length}</div>
                     </CardContent>
                 </Card>
                 <Card>
@@ -80,7 +80,7 @@ export default function ProductClient({ initialProducts: products }: { initialPr
                     </CardHeader>
                     <CardContent>
                         <div className="text-2xl font-bold text-yellow-600">
-                            {products?.filter((p: Product) => p.stock > 0 && p.stock <= 10).length}
+                            {products?.filter((p: Product) => p.stock > 0 && p.stock <= 5).length}
                         </div>
                     </CardContent>
                 </Card>
